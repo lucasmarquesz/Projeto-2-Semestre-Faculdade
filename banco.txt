@@ -1,0 +1,22 @@
+use projeto;
+
+create table planos(
+id_planos int primary key auto_increment,
+nome_plano varchar(40) not null,
+data_pagamento varchar(40) not null, 
+valor varchar(40) not null, 
+gigas varchar(40)
+);
+
+create table cliente(
+id_cliente int primary key auto_increment,
+nome varchar(60) not null, 
+cpf_cpj varchar(45) not null, 
+dta_nascimento varchar(45) not null, 
+endereco varchar(60) not null, 
+status_rede varchar(20) not null, 
+login varchar(45) not null, 
+senha varchar(45) not null, 
+id_plano int, 
+constraint fk_planos foreign key(id_plano) references planos(id_planos)
+);
